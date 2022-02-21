@@ -3,7 +3,7 @@ using Dhl.Execs;
 namespace Dhl.Helpers;
 class GitHelper
 {
-    public static void AddGitToProject(PromptModel model)
+    public static void AddGitToSolution(PromptModel model)
     {
         if (model.GitIgnoreFile == true)
         {

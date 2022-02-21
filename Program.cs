@@ -3,4 +3,4 @@ using Sharprompt;
 
 var model = Prompt.Bind<PromptModel>();
 
-GitHelper.AddGitToProject(model);
+GitHelper.AddGitToSolution(model);
