@@ -3,21 +3,21 @@ using System.ComponentModel.DataAnnotations;
 namespace Dhl.Options;
 enum TemplateTypes
 {
-    [Display(Name = "Console application template.")]
+    [Display(Name = "Console application")]
     console,
 
-    [Display(Name = "Empty web app template.")]
+    [Display(Name = "Empty web application")]
     web,
 
-    [Display(Name = "Grpc template.")]
+    [Display(Name = "Grpc service")]
     grpc,
 
-    [Display(Name = "Web api template.")]
+    [Display(Name = "Web api")]
     webapi,
 
-    [Display(Name = "Web app using razor pages template.")]
+    [Display(Name = "Web application using razor pages")]
     webapp,
 
-    [Display(Name = "Web app mvc template (Model-View-Controller).")]
+    [Display(Name = "Web application (Model-View-Controller)")]
     mvc
 }
