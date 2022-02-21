@@ -6,7 +6,7 @@ class BashExec
 {
     public static string Run(string command)
     {
-
+        var output = string.Empty;
         command = command.Replace("\"", "\"\"");
 
         var processInfo = new ProcessStartInfo
@@ -21,9 +21,12 @@ class BashExec
 
         using var process = Process.Start(processInfo);
 
-        process.WaitForExit();
+        if (process != null)
+        { 
+            process.WaitForExit();
+            output = process.StandardOutput.ReadToEnd();
+        }
 
-        var output = process.StandardOutput.ReadToEnd();
 
         return output;
     }
