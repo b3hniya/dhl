@@ -6,12 +6,11 @@ class TemplateHelper
 {
     public static void CreateProjectBasedOnTemplate(PromptModel model)
     {
-        var command = string.Empty;
+        var command = $"dotnet new {model.Template.ToString()} -n {model.ProjectName}";
 
-        command += $"dotnet new {model.Template.ToString()}";
+        if (model.PutSolutionAndProjectInSamePlace == false)
+            command += $" --output ./{model.GetSolutionName()}/{model.ProjectName}";
 
-        if (model.IsDifferentLocation())
-            command += $" -n {model.GetProjectName()}";
 
         BashExec.Run(command);
     }
