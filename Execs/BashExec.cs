@@ -4,7 +4,7 @@ namespace Dhl.Execs;
 
 class BashExec
 {
-    public static void Run(string command)
+    public static string Run(string command)
     {
 
         command = command.Replace("\"", "\"\"");
@@ -23,6 +23,8 @@ class BashExec
 
         process.WaitForExit();
 
-        // var output = process.StandardOutput.ReadToEnd();
+        var output = process.StandardOutput.ReadToEnd();
+
+        return output;
     }
 }
