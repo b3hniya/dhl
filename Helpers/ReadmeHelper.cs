@@ -8,10 +8,10 @@ class ReadmeHelper
     {
         if (model.AddReadme)
         {
-            if (model.IsDifferentLocation())
-                BashExec.Run($"touch ./{model.GetProjectName()}/README.md");
+            if (model.PutSolutionAndProjectInSamePlace == false)
+                BashExec.Run($"touch ./{model.GetSolutionName()}/README.md");
             else
-                BashExec.Run("touch README.md");
+                BashExec.Run($"touch ./{model.ProjectName}/README.md");
         }
     }
 }
