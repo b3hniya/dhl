@@ -5,7 +5,7 @@ class GitHelper
 {
     public static void AddGitToSolution(PromptModel model)
     {
-        if (model.GitIgnoreFile == true)
+        if (model.AddGit == true)
         {
             BashExec.Run("dotnet new gitignore");
             BashExec.Run("git init");

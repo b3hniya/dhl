@@ -22,5 +22,5 @@ class PromptModel
 
     [Display(Name = "add git to your project")]
     [Required]
-    public bool GitIgnoreFile { get; set; }
+    public bool AddGit { get; set; }
 }
