@@ -4,16 +4,17 @@ using Sharprompt;
 
 var model = Prompt.Bind<PromptModel>();
 
-var projectInThisFolder = Prompt.Confirm("Do you want to initialize your project in this folder");
-if (projectInThisFolder == false)
+if (model.PutSolutionAndProjectInSamePlace == false)
 {
-    var projectName = Prompt.Input<string>("please Enter project name");
-    model.SetProjectName(projectName);
+    var solutionName = Prompt.Input<string>("please enter solution name");
+    model.SetSolutionName(solutionName);
 }
 
-//Implement add solution and project in a same directory
-// var solutionAndProjectInTheSameFolder
+SolutionHelper.CreateSolution(model);
 
 TemplateHelper.CreateProjectBasedOnTemplate(model);
+
+SolutionHelper.LinkProjectToSolution(model);
+
 ReadmeHelper.AddReadmeFile(model);
 GitHelper.AddGitToSolution(model);
