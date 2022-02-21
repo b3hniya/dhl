@@ -7,7 +7,7 @@ class PromptModel
     private string _projectName = string.Empty;
     public string GetProjectName() => _projectName;
     public string SetProjectName(string name) => _projectName = name;
-
+    public bool IsDifferentLocation() => _projectName != string.Empty;
 
     //Required Props
     [Display(Name = "Choose your preferred template")]
@@ -20,7 +20,7 @@ class PromptModel
     // [Display(Name = "Solution Name")]
     // public string SolutionName;
 
-    [Display(Name = "add git to your project")]
+    [Display(Name = "Add git to your project")]
     [Required]
     public bool AddGit { get; set; }
 }

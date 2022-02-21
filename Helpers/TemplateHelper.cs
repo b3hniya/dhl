@@ -10,7 +10,7 @@ class TemplateHelper
 
         command += $"dotnet new {model.Template.ToString()}";
 
-        if (model.GetProjectName() != string.Empty)
+        if (model.IsDifferentLocation())
             command += $" -n {model.GetProjectName()}";
 
         BashExec.Run(command);

@@ -9,7 +9,16 @@ class GitHelper
 
         if (model.AddGit == true)
         {
-            if (projectName == string.Empty)
+            if (model.IsDifferentLocation())
+            {
+                BashExec.Run($"dotnet new gitignore --output {projectName}");
+                BashExec.Run($"git init {projectName}");
+                BashExec.Run($"git -C ./{projectName} add .");
+                BashExec.Run($"git -C ./{projectName} commit -m 'init.'");
+
+                System.Console.WriteLine("Git initialized successfully.");
+            }
+            else
             {
                 BashExec.Run("dotnet new gitignore");
                 BashExec.Run("git init");
@@ -17,15 +26,6 @@ class GitHelper
                 BashExec.Run("git add .gitignore");
                 BashExec.Run("git commit -m 'init.'");
 
-
-                System.Console.WriteLine("Git initialized successfully.");
-            }
-            else
-            {
-                BashExec.Run($"dotnet new gitignore --output {projectName}");
-                BashExec.Run($"git init {projectName}");
-                BashExec.Run($"git -C ./{projectName} add .");
-                BashExec.Run($"git -C ./{projectName} commit -m 'init.'");
 
                 System.Console.WriteLine("Git initialized successfully.");
             }
