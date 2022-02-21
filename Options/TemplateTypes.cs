@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 namespace Dhl.Options;
 enum TemplateTypes
 {
+    [Display(Name = "Console application template.")]
+    console,
+
     [Display(Name = "Empty web app template.")]
     web,
 
