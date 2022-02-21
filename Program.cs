@@ -15,4 +15,5 @@ if (projectInThisFolder == false)
 // var solutionAndProjectInTheSameFolder
 
 TemplateHelper.CreateProjectBasedOnTemplate(model);
+ReadmeHelper.AddReadmeFile(model);
 GitHelper.AddGitToSolution(model);

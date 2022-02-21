@@ -23,4 +23,8 @@ class PromptModel
     [Display(Name = "Add git to your project")]
     [Required]
     public bool AddGit { get; set; }
+
+    [Display(Name = "Add README.md file to your project")]
+    [Required]
+    public bool AddReadme { get; set; }
 }
