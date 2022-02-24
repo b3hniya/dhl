@@ -15,7 +15,7 @@
         git
     </li>
     <li>
-        bash
+        shell
     </li>
 </ul>
 
@@ -24,15 +24,26 @@
     For running this project, make sure you installed dotnet and git on your device.
 </p>
 <pre>
-    git clone https://github.com/b3hniya/dhl.git
-    cd ./dhl 
-    dotnet run
+    > git clone https://github.com/b3hniya/dhl.git
+    > cd ./dhl 
+    > dotnet run
 </pre>
 
-<h2> Installing dhl on your machine. </h2>
+<h2> Installing/Uninstalling dhl on your machine. </h2>
 <p> For installing dhl on your machine, please run the following script on your terminal. </p>
 <pre>
-    ./install.sh
+    > ./install.sh
+    > dhl --help
+</pre>
+<p> For uninstalling dhl on your machine, run the following script. </p>
+<pre>
+    >  ./uninstall.sh
+</pre>
+
+<h2>Using Cli</h2>
+<p>For create project using cli, run the following command </p>
+<pre>
+    > dhl create
 </pre>
 
 <h2>Built with</h2>
@@ -44,7 +55,7 @@
         .Net 6.0
     </li>
     <li>
-        Bash
+        Shell
     </li>
     <li>
         <a href="https://github.com/shibayan/Sharprompt">Sharprompt</a>
