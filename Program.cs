@@ -1,20 +1,13 @@
-﻿using Dhl.Helpers;
-using Sharprompt;
+﻿using System.CommandLine;
+using Dhl.Commands;
 
-
-var model = Prompt.Bind<PromptModel>();
-
-if (model.PutSolutionAndProjectInSamePlace == false)
+RootCommand rootCommand = new();
+Command create = new("create");
+create.SetHandler(() =>
 {
-    var solutionName = Prompt.Input<string>("please enter solution name");
-    model.SetSolutionName(solutionName);
-}
+    CreateCommand.Handle();
+});
 
-SolutionHelper.CreateSolution(model);
+rootCommand.Add(create);
 
-TemplateHelper.CreateProjectBasedOnTemplate(model);
-
-SolutionHelper.LinkProjectToSolution(model);
-
-ReadmeHelper.AddReadmeFile(model);
-GitHelper.AddGitToSolution(model);
+return await rootCommand.InvokeAsync(args);
