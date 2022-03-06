@@ -7,13 +7,14 @@ create.SetHandler(() =>
 {
     CreateCommand.Handle();
 });
-
-Command scaffold = new("scaffold");
-scaffold.SetHandler(() =>
-{
-    ScaffoldCommand.Handle();
-});
-
 rootCommand.Add(create);
+
+
+Command add = new("add");
+add.SetHandler(() =>
+{
+    AddCommand.Handle();
+});
+rootCommand.Add(add);
 
 return await rootCommand.InvokeAsync(args);
