@@ -12,7 +12,7 @@ class CreateModel
     //Required Props
     [Display(Name = "Choose your preferred template")]
     [Required]
-    public TemplateTypes Template { get; set; }
+    public CreateTemplateTypes Template { get; set; }
 
 
     [Display(Name = "Add git to your project")]

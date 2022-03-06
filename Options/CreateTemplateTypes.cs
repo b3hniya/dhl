@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace Dhl.Options;
-enum TemplateTypes
+enum CreateTemplateTypes
 {
     [Display(Name = "Console application")]
     console,
