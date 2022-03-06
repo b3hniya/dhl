@@ -7,7 +7,7 @@ class CreateCommand
 {
     public static void Handle()
     {
-        var model = Prompt.Bind<PromptModel>();
+        var model = Prompt.Bind<CreateModel>();
 
         if (model.PutSolutionAndProjectInSamePlace == false)
         {

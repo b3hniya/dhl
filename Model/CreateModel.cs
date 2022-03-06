@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Dhl.Options;
 
-class PromptModel
+class CreateModel
 {
     //Optional Props
     private static string _solutionName = string.Empty;

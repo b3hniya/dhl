@@ -4,7 +4,7 @@ namespace Dhl.Helpers;
 
 class ReadmeHelper
 {
-    public static void AddReadmeFile(PromptModel model)
+    public static void AddReadmeFile(CreateModel model)
     {
         if (model.AddReadme)
         {

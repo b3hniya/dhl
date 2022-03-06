@@ -4,7 +4,7 @@ namespace Dhl.Helpers;
 
 class TemplateHelper
 {
-    public static void CreateProjectBasedOnTemplate(PromptModel model)
+    public static void CreateProjectBasedOnTemplate(CreateModel model)
     {
         var command = $"dotnet new {model.Template.ToString()} -n {model.ProjectName}";
 

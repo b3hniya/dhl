@@ -4,7 +4,7 @@ namespace Dhl.Helpers;
 
 class SolutionHelper
 {
-    public static void CreateSolution(PromptModel model)
+    public static void CreateSolution(CreateModel model)
     {
 
         if (model.PutSolutionAndProjectInSamePlace == false)
@@ -14,7 +14,7 @@ class SolutionHelper
         }
     }
 
-    public static void LinkProjectToSolution(PromptModel model)
+    public static void LinkProjectToSolution(CreateModel model)
     {
         if (model.PutSolutionAndProjectInSamePlace == false)
         {
