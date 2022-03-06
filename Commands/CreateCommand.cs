@@ -1,5 +1,6 @@
 using Sharprompt;
 using Dhl.Helpers;
+using Dhl.Model;
 
 namespace Dhl.Commands;
 

@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Dhl.Options;
 
+namespace Dhl.Model;
 class CreateModel
 {
     //Optional Props
