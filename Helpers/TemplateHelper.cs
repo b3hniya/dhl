@@ -15,4 +15,16 @@ class TemplateHelper
 
         BashExec.Run(command);
     }
+
+
+    public static void CreateFileBasedOnTemplate(AddModel model)
+    {
+        var command = String.Empty;
+        if (model.Template.ToString() == "Class")
+        {
+            command += $"echo 'class {model.FileName}\n{{\n\tpublic void {model.FileName}()\n\t{{\n\t}}\n}}' > {model.FileName}.cs";
+        }
+
+        BashExec.Run(command);
+    }
 }
