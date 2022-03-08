@@ -5,4 +5,7 @@ public enum AddTemplateTypes
 {
     [Display(Name = "New Class")]
     Class,
+
+    [Display(Name = "New Interface")]
+    Interface,
 }
