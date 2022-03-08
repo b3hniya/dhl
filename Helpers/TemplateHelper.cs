@@ -19,10 +19,22 @@ class TemplateHelper
 
     public static void CreateFileBasedOnTemplate(AddModel model)
     {
-        var command = String.Empty;
-        if (model.Template.ToString() == "Class")
+        string command = String.Empty;
+        string fileName = model.FileName;
+
+        switch (model.Template.ToString())
         {
-            command += $"echo 'class {model.FileName}\n{{\n\tpublic void {model.FileName}()\n\t{{\n\t}}\n}}' > {model.FileName}.cs";
+            case "Class":
+                command += $"echo 'class {fileName}\n{{\n\tpublic void {fileName}()\n\t{{\n\t}}\n}}' > {fileName}.cs";
+                break;
+
+            case "Interface":
+                command += $"echo 'interface {fileName}\n{{\n}}' > {fileName}.cs";
+                break;
+
+            default:
+                command = "";
+                break;
         }
 
         BashExec.Run(command);
