@@ -19,5 +19,15 @@ enum CreateTemplateTypes
     webapp,
 
     [Display(Name = "Web application (Model-View-Controller)")]
-    mvc
+    mvc,
+
+    [Display(Name = "Blazor Server application")]
+    blazorserver,
+
+
+    [Display(Name = "Blazor web assembly application")]
+    blazorwasm,
+
+    [Display(Name = "Class Library")]
+    classlib,
 }
