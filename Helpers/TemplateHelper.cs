@@ -25,7 +25,7 @@ class TemplateHelper
         switch (model.Template.ToString())
         {
             case "Class":
-                command += $"echo 'class {fileName}\n{{\n\tpublic void {fileName}()\n\t{{\n\t}}\n}}' > {fileName}.cs";
+                command += $"echo 'class {fileName}\n{{\n\tpublic {fileName}()\n\t{{\n\t}}\n}}' > {fileName}.cs";
                 break;
 
             case "Interface":
