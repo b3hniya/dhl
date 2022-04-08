@@ -12,7 +12,7 @@ class CreateCommand
 
         if (model.PutSolutionAndProjectInSamePlace == false)
         {
-            var solutionName = Prompt.Input<string>("please enter solution name");
+            var solutionName = Prompt.Input<string>("please enter solution name", model.ProjectName);
             model.SetSolutionName(solutionName);
         }
 
