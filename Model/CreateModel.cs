@@ -10,6 +10,15 @@ class CreateModel
     public string SetSolutionName(string name) => _solutionName = name;
 
 
+    private bool _addXUnit = false;
+    public bool AddXUnit() => _addXUnit;
+    public void SetAddXunit(bool add) => _addXUnit = add;
+
+    private static string _xUnitProjectName = string.Empty;
+    public string GetXUnitProjectName() => _xUnitProjectName;
+    public string SetXUnitProjectName(string name) => _xUnitProjectName = name;
+
+
     //Required Props
     [Display(Name = "Choose your preferred template")]
     [Required]

@@ -1,6 +1,7 @@
 using Sharprompt;
 using Dhl.Helpers;
 using Dhl.Model;
+using Dhl.Options;
 
 namespace Dhl.Commands;
 
@@ -16,6 +17,21 @@ class CreateCommand
             model.SetSolutionName(solutionName);
         }
 
+        if (model.Template != CreateTemplateTypes.xunit && model.PutSolutionAndProjectInSamePlace == false)
+        {
+            model.SetAddXunit(
+                Prompt.Confirm("Add XUnit Project to solution")
+            );
+        }
+
+        if (model.AddXUnit())
+        {
+            string defaultName = model.ProjectName + "UnitTest";
+            string XUnitProjectName = Prompt.Input<string>("please enter unit test project name", defaultName);
+
+            model.SetXUnitProjectName(XUnitProjectName);
+        }
+
         SolutionHelper.CreateSolution(model);
 
         TemplateHelper.CreateProjectBasedOnTemplate(model);
@@ -24,5 +40,7 @@ class CreateCommand
 
         ReadmeHelper.AddReadmeFile(model);
         GitHelper.AddGitToSolution(model);
+
+        XUnitHelper.AddXUnitProject(model);
     }
 }

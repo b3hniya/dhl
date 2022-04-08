@@ -30,4 +30,7 @@ enum CreateTemplateTypes
 
     [Display(Name = "Class Library")]
     classlib,
+
+    [Display(Name = "XUnit Test project")]
+    xunit
 }
