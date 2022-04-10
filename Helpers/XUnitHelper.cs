@@ -9,12 +9,13 @@ class XUnitHelper
     {
         if (model.AddXUnit())
         {
-            System.Console.WriteLine("here...." + $" {model.GetXUnitProjectName()}");
             string command = $"dotnet new xunit -n {model.GetXUnitProjectName()} --output ./{model.GetSolutionName()}/{model.GetXUnitProjectName()}";
             BashExec.Run(command);
 
             LinkXunitToSolution(model);
             AddProjectReferenceToXunitProject(model);
+
+            Console.WriteLine("XUnit project added to application successfully.");
         }
     }
 
