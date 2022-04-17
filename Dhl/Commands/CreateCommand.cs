@@ -1,7 +1,7 @@
 using Sharprompt;
 using Dhl.Helpers;
 using Dhl.Model;
-using Dhl.Options;
+using Dhl.Model.Options;
 
 namespace Dhl.Commands;
 
@@ -26,10 +26,10 @@ class CreateCommand
 
         if (model.AddXUnit())
         {
-            string defaultName = model.ProjectName + "UnitTest";
-            string XUnitProjectName = Prompt.Input<string>("please enter unit test project name", defaultName);
+            string defaultName = $"{model.ProjectName}UnitTest";
+            string xUnitProjectName = Prompt.Input<string>("please enter unit test project name", defaultName);
 
-            model.SetXUnitProjectName(XUnitProjectName);
+            model.SetXUnitProjectName(xUnitProjectName);
         }
 
         SolutionHelper.CreateSolution(model);

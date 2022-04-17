@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Dhl.Options;
+namespace Dhl.Model.Options;
 public enum AddTemplateTypes
 {
     [Display(Name = "New Class")]

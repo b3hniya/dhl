@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using Dhl.Options;
+using Dhl.Model.Options;
 
 namespace Dhl.Model;
 class CreateModel

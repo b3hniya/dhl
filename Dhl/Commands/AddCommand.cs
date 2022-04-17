@@ -10,6 +10,5 @@ public class AddCommand
     {
         var model = Prompt.Bind<AddModel>();
         TemplateHelper.CreateFileBasedOnTemplate(model);
-
     }
 }

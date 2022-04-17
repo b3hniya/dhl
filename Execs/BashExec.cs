@@ -1,8 +1,8 @@
 using System.Diagnostics;
 
-namespace Dhl.Execs;
+namespace Execs;
 
-class BashExec
+public class BashExec
 {
     public static string Run(string command)
     {
@@ -21,8 +21,8 @@ class BashExec
 
         using var process = Process.Start(processInfo);
 
-        if (process != null)
-        { 
+        if (process is not null)
+        {
             process.WaitForExit();
             output = process.StandardOutput.ReadToEnd();
         }
