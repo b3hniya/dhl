@@ -32,5 +32,14 @@ enum CreateTemplateTypes
     classlib,
 
     [Display(Name = "XUnit Test project")]
-    xunit
+    xunit, 
+    
+    [Display(Name = "Avalonia Desktop Application")]
+    avalonia_app, 
+    
+    [Display(Name = "Avalonia Desktop Application (MVVM)")]
+    avalonia_mvvm,
+    
+    [Display(Name = "Avalonia Cross platform")]
+    avalonia_xplat,
 }
